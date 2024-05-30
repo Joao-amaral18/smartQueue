@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "smartQueue.API", "smartQueue.API.csproj", "{2137A8E8-EA45-45C6-A045-C75451768F16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2137A8E8-EA45-45C6-A045-C75451768F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2137A8E8-EA45-45C6-A045-C75451768F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2137A8E8-EA45-45C6-A045-C75451768F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2137A8E8-EA45-45C6-A045-C75451768F16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0072C473-85F6-4EE2-9021-11BB8F4CC896}
+	EndGlobalSection
+EndGlobal
