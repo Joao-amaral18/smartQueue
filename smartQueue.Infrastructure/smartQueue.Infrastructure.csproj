@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\smartQueue.Core\smartQueue.Core.csproj" />
+    <ProjectReference Include="..\SmartQueue.Application\SmartQueue.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
