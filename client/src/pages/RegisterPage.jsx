@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css'; // Importar o CSS padrão do react-datepicker
+import { registerLocale, setDefaultLocale } from 'react-datepicker';
+import ptBR from 'date-fns/locale/pt-BR'; // Importar localização em Português Brasileiro
 import './RegisterPage.css'; // Importar o arquivo CSS
 
 const RegisterPage = () => {
@@ -9,8 +13,12 @@ const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cpf, setCpf] = useState('');
-  const [birthdate, setBirthdate] = useState('');
+  const [birthdate, setBirthdate] = useState(null); // Inicializa com null para evitar erros de formatação
   const [error, setError] = useState('');
+
+  // Configuração da localização para Português Brasileiro
+  registerLocale('pt-BR', ptBR);
+  setDefaultLocale('pt-BR');
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -43,7 +51,18 @@ const RegisterPage = () => {
           </div>
           <div className="form-group">
             <label>Data de Nascimento:</label>
-            <input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)} required />
+            <DatePicker
+              selected={birthdate}
+              onChange={(date) => setBirthdate(date)}
+              dateFormat="dd/MM/yyyy" // Formato brasileiro
+              locale="pt-BR" // Configuração de localização para exibir dias e meses em português
+              placeholderText="Selecione a data" // Texto de placeholder
+              isClearable // Permite limpar a seleção
+              showYearDropdown // Mostra o dropdown de seleção de ano
+              scrollableYearDropdown // Anos roláveis no dropdown
+              yearDropdownItemNumber={15} // Quantidade de anos no dropdown
+              required
+            />
           </div>
           <div className="form-group">
             <label>Senha:</label>
