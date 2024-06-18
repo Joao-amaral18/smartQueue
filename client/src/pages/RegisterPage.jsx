@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../api/axios';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'; // Importar o CSS padrão do react-datepicker
+import 'react-datepicker/dist/react-datepicker.css'; 
 import { registerLocale, setDefaultLocale } from 'react-datepicker';
-import ptBR from 'date-fns/locale/pt-BR'; // Importar localização em Português Brasileiro
-import './RegisterPage.css'; // Importar o arquivo CSS
+import ptBR from 'date-fns/locale/pt-BR'; 
+import './RegisterPage.css'; 
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -13,19 +13,17 @@ const RegisterPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cpf, setCpf] = useState('');
-  const [birthdate, setBirthdate] = useState(null); // Inicializa com null para evitar erros de formatação
+  const [birthdate, setBirthdate] = useState(null);
   const [error, setError] = useState('');
 
-  // Configuração da localização para Português Brasileiro
   registerLocale('pt-BR', ptBR);
   setDefaultLocale('pt-BR');
 
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/api/auth/register', { name, email, password, cpf, birthdate });
-      // Handle registration success (optional)
-      navigate('/login'); // Redirect to login after successful registration
+      const response = await axios.post('/users', { name, email, password, cpf, birthdate });
+      navigate('/login'); 
     } catch (error) {
       console.error('Registration error:', error);
       setError('Erro ao cadastrar. Por favor, tente novamente.');
@@ -54,13 +52,13 @@ const RegisterPage = () => {
             <DatePicker
               selected={birthdate}
               onChange={(date) => setBirthdate(date)}
-              dateFormat="dd/MM/yyyy" // Formato brasileiro
-              locale="pt-BR" // Configuração de localização para exibir dias e meses em português
-              placeholderText="Selecione a data" // Texto de placeholder
-              isClearable // Permite limpar a seleção
-              showYearDropdown // Mostra o dropdown de seleção de ano
-              scrollableYearDropdown // Anos roláveis no dropdown
-              yearDropdownItemNumber={15} // Quantidade de anos no dropdown
+              dateFormat="dd/MM/yyyy" 
+              locale="pt-BR" 
+              placeholderText="Selecione a data" 
+              isClearable 
+              showYearDropdown 
+              scrollableYearDropdown 
+              yearDropdownItemNumber={15}
               required
             />
           </div>

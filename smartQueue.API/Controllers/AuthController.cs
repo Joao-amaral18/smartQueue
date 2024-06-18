@@ -33,7 +33,7 @@ public class AuthController : ControllerBase
         if (user != null)
         {
             var token = GenerateJwtToken(user.Email);
-            return Ok(new { Token = token });
+            return Ok(new { Token = token, UserId = user.Id });
         }
 
         return Unauthorized();

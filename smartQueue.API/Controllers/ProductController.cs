@@ -77,6 +77,21 @@ namespace SmartQueue.Api.Controllers
             return NoContent();
         }
 
+        // DELETE: api/products/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
         private bool ProductExists(int id)
         {
             return _context.Products.Any(e => e.Id == id);
