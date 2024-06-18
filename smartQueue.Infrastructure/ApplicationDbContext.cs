@@ -4,13 +4,9 @@ using smartQueue.Core.Entities;
 
 namespace smartQueue.Infrastructure
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext(IConfiguration configuration) : DbContext
     {
-        protected readonly IConfiguration _configuration;
-        public ApplicationDbContext(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
+        protected readonly IConfiguration _configuration = configuration;
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -20,5 +16,12 @@ namespace smartQueue.Infrastructure
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Order>().ToTable("Orders");
+            modelBuilder.Entity<OrderItem>().ToTable("OrderItems");
+            modelBuilder.Entity<Product>().ToTable("Products");
+        }
     }
 }

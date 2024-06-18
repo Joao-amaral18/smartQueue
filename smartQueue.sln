@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartQueue.Core", "smartQue
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartQueue.Infrastructure", "smartQueue.Infrastructure\smartQueue.Infrastructure.csproj", "{79331127-2CE4-4B6F-8617-8B9340AE1C0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartQueue.Tests", "smartQueue.Tests\smartQueue.Tests.csproj", "{9860EA06-81D7-4616-AC15-0A8C3A2A0869}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartQueue.Application", "SmartQueue.Application\SmartQueue.Application.csproj", "{D89608A5-9E00-4C32-A8F0-FA28A297A071}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,9 +32,9 @@ Global
 		{79331127-2CE4-4B6F-8617-8B9340AE1C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79331127-2CE4-4B6F-8617-8B9340AE1C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79331127-2CE4-4B6F-8617-8B9340AE1C0B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9860EA06-81D7-4616-AC15-0A8C3A2A0869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9860EA06-81D7-4616-AC15-0A8C3A2A0869}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9860EA06-81D7-4616-AC15-0A8C3A2A0869}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9860EA06-81D7-4616-AC15-0A8C3A2A0869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89608A5-9E00-4C32-A8F0-FA28A297A071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89608A5-9E00-4C32-A8F0-FA28A297A071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89608A5-9E00-4C32-A8F0-FA28A297A071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89608A5-9E00-4C32-A8F0-FA28A297A071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
